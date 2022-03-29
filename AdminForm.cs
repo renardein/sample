@@ -124,6 +124,14 @@ namespace Session_4
         private void change_role_button_Click(object sender, EventArgs e)
         {
             EditRoleForm edit = new EditRoleForm();
+            edit.email_text.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            edit.firstname_text.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            edit.lastname_text.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            edit.officebox_text.SelectedItem = dataGridView1.CurrentRow.Cells[6].Value;
+            if (dataGridView1.CurrentRow.Cells[4].Value.ToString() =="User")
+                edit.radioButton1.Checked = true;
+            else
+                edit.radioButton2.Checked = true;
             edit.ShowDialog();
         }
     }

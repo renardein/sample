@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditRoleForm));
             this.cancel_button = new System.Windows.Forms.Button();
             this.save_button = new System.Windows.Forms.Button();
@@ -42,6 +43,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.session3_4DataSet = new Session_4.Session3_4DataSet();
+            this.officesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.officesTableAdapter = new Session_4.Session3_4DataSetTableAdapters.OfficesTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.session3_4DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.officesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // cancel_button
@@ -61,6 +67,7 @@
             // 
             // officebox_text
             // 
+            this.officebox_text.DataSource = this.officesBindingSource;
             this.officebox_text.DisplayMember = "Title";
             resources.ApplyResources(this.officebox_text, "officebox_text");
             this.officebox_text.FormattingEnabled = true;
@@ -121,6 +128,20 @@
             this.radioButton2.TabStop = true;
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
+            // session3_4DataSet
+            // 
+            this.session3_4DataSet.DataSetName = "Session3_4DataSet";
+            this.session3_4DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // officesBindingSource
+            // 
+            this.officesBindingSource.DataMember = "Offices";
+            this.officesBindingSource.DataSource = this.session3_4DataSet;
+            // 
+            // officesTableAdapter
+            // 
+            this.officesTableAdapter.ClearBeforeFill = true;
+            // 
             // EditRoleForm
             // 
             resources.ApplyResources(this, "$this");
@@ -144,6 +165,9 @@
             this.MinimizeBox = false;
             this.Name = "EditRoleForm";
             this.ShowIcon = false;
+            this.Load += new System.EventHandler(this.EditRoleForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.session3_4DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.officesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,7 +186,10 @@
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        public System.Windows.Forms.RadioButton radioButton1;
+        public System.Windows.Forms.RadioButton radioButton2;
+        private Session3_4DataSet session3_4DataSet;
+        private System.Windows.Forms.BindingSource officesBindingSource;
+        private Session3_4DataSetTableAdapters.OfficesTableAdapter officesTableAdapter;
     }
 }

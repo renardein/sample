@@ -25,5 +25,13 @@ namespace Session_4
         {
           
         }
+
+        private void EditRoleForm_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "session3_4DataSet.Offices". При необходимости она может быть перемещена или удалена.
+            this.officesTableAdapter.Fill(this.session3_4DataSet.Offices);
+            AdminForm admin = new AdminForm();
+            officebox_text.SelectedItem = admin.dataGridView1.CurrentRow.Cells[6].Value;
+        }
     }
 }
